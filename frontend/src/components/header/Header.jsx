@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useLogoutMutation } from '../../slices/UserApiSlice'
 import { logout } from '../../slices/AuthSlice';
+import '../header/Header.css'
+
 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -25,10 +27,10 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar className="custom-navbar"  variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>MERN App</Navbar.Brand>
+            <Navbar.Brand  >SIMPLE PDF</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -46,12 +48,12 @@ const Header = () => {
                 <>
                   <LinkContainer to='/login'>
                     <Nav.Link>
-                      <FaSignInAlt /> Sign In
+                      Sign In
                     </Nav.Link>
                   </LinkContainer>
                   <LinkContainer to='/register'>
                     <Nav.Link>
-                      <FaSignOutAlt /> Sign Up
+                       Sign Up
                     </Nav.Link>
                   </LinkContainer>
                 </>
@@ -65,3 +67,8 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+

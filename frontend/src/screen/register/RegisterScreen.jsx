@@ -7,6 +7,9 @@ import { useRegisterMutation } from '../../slices/UserApiSlice';
 import { setCredentials } from '../../slices/AuthSlice';
 import { toast } from 'react-toastify';
 import Loader from '../../components/loader/Loader';
+import '../register/register.css'
+
+
 
 const RegisterScreen = () => {
   const [name, setName] = useState('');
@@ -18,7 +21,7 @@ const RegisterScreen = () => {
   const navigate = useNavigate();
   const { userInfo } = useSelector((state) => state.auth);
   const [register, { isLoading }] = useRegisterMutation();
-  
+
   useEffect(() => {
     if (userInfo) {
       navigate('/');
@@ -49,7 +52,7 @@ const RegisterScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Register</h1>
+      <h2>Register</h2>
       <Form onSubmit={submitHandler}>
         <Form.Group className='my-2' controlId='name'>
           <Form.Label>Name</Form.Label>
@@ -90,7 +93,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary' className='mt-3'>
+        <Button type='submit' variant='primary' className='mt-3 btNcolor'>
           Register
         </Button>
        
@@ -99,7 +102,7 @@ const RegisterScreen = () => {
       </Form>
 
       <Row className='py-3'>
-        <Col>
+        <Col className='fontPopSmall'>
           Already have an account? <Link to={`/login`}>Login</Link>
         </Col>
       </Row>
