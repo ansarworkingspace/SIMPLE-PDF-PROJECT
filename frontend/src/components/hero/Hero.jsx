@@ -1,28 +1,23 @@
 import { Container, Card, Button } from 'react-bootstrap';
+import { FaUpload } from 'react-icons/fa';
+import '../hero/Hero.css'
 
 const Hero = () => {
   return (
-    <div className=' py-5'>
+    <div className='py-5'>
       <Container className='d-flex justify-content-center'>
-        <Card className='p-5 d-flex flex-column align-items-center hero-card bg-light w-75'>
-          <h1 className='text-center mb-4'>MERN Authentication</h1>
-          <p className='text-center mb-4'>
-            This is a boilerplate for MERN authentication that stores a JWT in
-            an HTTP-Only cookie. It also uses Redux Toolkit and the React
-            Bootstrap library
-          </p>
-          <div className='d-flex'>
-            <Button variant='primary' href='/login' className='me-3'>
-              Sign In
-            </Button>
-            <Button variant='secondary' href='/register'>
-              Register
-            </Button>
+        <Card className='p-5 d-flex flex-column align-items-center hero-card bg-light w-75 uploadingBox' style={{ minHeight: '60vh' }}>
+          <h3 className='text-center mb-4' style={{color:"#5e5454"}}>Upload the PDF File</h3>
+          <div className='d-flex align-items-center mb-4' style={{margin:"auto"}}>
+            <FaUpload size={30} style={{ marginRight: '10px' , color:"#8b15a5"}} />
+            <span style={{color:"#8b15a5" , fontFamily:"Poppins" , cursor:"pointer"}} >Click to Upload</span>
           </div>
+          <p className='text-center' style={{margin:"auto"}}>
+            Simple PDF is a good platform for extracting multiple PDF files into a single PDF file. If you want to extract a single PDF from multiple PDF files, please upload them and wait a few minutes.
+          </p>
         </Card>
       </Container>
     </div>
   );
 };
-
 export default Hero;
