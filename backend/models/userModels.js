@@ -1,6 +1,25 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
+
+
+const pageSchema = mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
+  // Add more fields for the page as needed
+});
+
+const pdfSchema = mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
+  pages: [pageSchema],
+  // Add more fields for the PDF as needed
+});
+
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -16,11 +35,13 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    pdfStore: [pdfSchema],
   },
   {
     timestamps: true,
   }
 );
+
 
 
 // Encrypt password using bcrypt

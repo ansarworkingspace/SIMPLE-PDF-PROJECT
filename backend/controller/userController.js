@@ -1,7 +1,9 @@
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModels.js';
 import generateToken from '../utils/generateToken.js';
-
+import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
+import { PDFDocument } from 'pdf-lib';
 
 
 //login user
@@ -67,8 +69,59 @@ const logoutUser = (req, res) => {
 };
 
 
+const uploadPdf = asyncHandler(async (req, res) => {
+  try {
+    const { email } = req.body; // Retrieve user details
+   
+
+    const pdfFile = req.file; // PDF file uploaded by the user
+
+    const existingPdfBytes = fs.readFileSync(pdfFile.path);
+    const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+    const user = await User.findOne({ email });
+
+    if (user) {
+      const pdfData = {
+        id: uuidv4(), // Generate a unique ID for the PDF
+        pages: [],
+      };
+
+      // Extract and save each page
+      for (let i = 0; i < pdfDoc.getPageCount(); i++) {
+        const newPdf = await PDFDocument.create();
+        const [copiedPage] = await newPdf.copyPages(pdfDoc, [i]);
+        newPdf.addPage(copiedPage);
+        const pdfBytes = await newPdf.save();
+        const pageId = `${pdfData.id}_${i + 1}.pdf`; // Generate a unique ID for the page
+
+        // Save the pdfBytes to the upload folder with the unique pageId
+        fs.writeFileSync(`uploads/${pageId}`, pdfBytes);
+
+        // Store the page ID in the pdfData
+        pdfData.pages.push({ id: pageId });
+      }
+
+      // Add the pdfData to the user's pdfStore
+      user.pdfStore.push(pdfData);
+
+      // Save the user data
+      await user.save();
+
+      res.status(200).json({ message: 'PDF uploaded successfully' });
+    } else {
+      res.status(404);
+      throw new Error('User not found');
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
 export {
   authUser,
   registerUser,
-  logoutUser
+  logoutUser,
+  uploadPdf
 };
