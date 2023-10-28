@@ -108,8 +108,8 @@ const uploadPdf = asyncHandler(async (req, res) => {
       // Save the user data
       await user.save();
 
-      
-      res.status(200).json({ message: 'PDF uploaded successfully' });
+      res.status(200).json({ message: 'PDF uploaded successfully', pdfId: pdfData.id });
+      // res.status(200).json({ message: 'PDF uploaded successfully' });
     } else {
       res.status(404);
       throw new Error('User not found');
@@ -120,9 +120,31 @@ const uploadPdf = asyncHandler(async (req, res) => {
 });
 
 
+const getPages = asyncHandler(async (req, res) => {
+  try {
+    const { pdfId } = req.params;
+    const { email } = req.query;
+    
+      // Find the user using the email ID
+      const user = await User.findOne({ email });
+
+      // Find the PDF using the provided PDF ID
+      const pdf = user.pdfStore.find((item) => item.id === pdfId);
+
+      // Extract the pages from the PDF
+      const pages = pdf ? pdf.pages : [];
+
+      res.status(200).json({ pages });
+  } catch (error) {
+      res.status(500).json({ message: 'Error fetching pages' });
+  }
+});
+
+
 export {
   authUser,
   registerUser,
   logoutUser,
-  uploadPdf
+  uploadPdf,
+  getPages
 };

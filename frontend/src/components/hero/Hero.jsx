@@ -19,10 +19,11 @@ const Hero = () => {
     formData.append('email', userInfo.email); // Append email to the formData
     
     try {
-      await axios.post('http://localhost:5000/api/users/uploadPdf', formData);
+      const response = await axios.post('http://localhost:5000/api/users/uploadPdf', formData);
       // If the upload is successful, you can perform additional actions here
       toast.success("PDF UPLOAD DONE")
-      navigate('/displayPdf')
+      const pdfId = response.data.pdfId; // Extract the PDF ID from the response
+      navigate(`/displayPdf/${pdfId}`); // Pass the PDF ID as a parameter
     } catch (error) {
       // Handle any errors that occur during the upload
       console.error('Error uploading file: ', error);

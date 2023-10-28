@@ -1,5 +1,5 @@
 import express from 'express';
-import { authUser,registerUser,logoutUser,uploadPdf } from '../controller/userController.js';
+import { authUser,registerUser,logoutUser,uploadPdf,getPages } from '../controller/userController.js';
 import { protect } from '../middleware/authMiddleware.js';
 import multer from 'multer';
 
@@ -26,5 +26,8 @@ router.post('/register', registerUser);
 router.post('/auth', authUser);
 router.post('/logout', logoutUser);
 router.post('/uploadPdf', upload.single('pdf'), uploadPdf);
+router.get('/getPages/:pdfId', getPages);
+
+
 
 export default router;
