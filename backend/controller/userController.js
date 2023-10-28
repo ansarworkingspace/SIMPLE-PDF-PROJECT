@@ -108,6 +108,7 @@ const uploadPdf = asyncHandler(async (req, res) => {
       // Save the user data
       await user.save();
 
+      
       res.status(200).json({ message: 'PDF uploaded successfully' });
     } else {
       res.status(404);

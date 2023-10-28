@@ -15,7 +15,7 @@ import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 import HomeScreen from './screen/homescreen/HomeScreen';
 import LoginScreen from './screen/login/LoginScreen';
 import RegisterScreen from './screen/register/RegisterScreen.jsx';
-
+import DisplayPdfPages from './screen/display/DisplayPdfPages.jsx';
 
 
 const router = createBrowserRouter(
@@ -24,8 +24,12 @@ const router = createBrowserRouter(
       <Route index={true} path='/' element={<HomeScreen />} />
       <Route path='/login' element={<LoginScreen />} /> 
       <Route path='/register' element={<RegisterScreen />} />
+      <Route path='/displayPdf' element={<DisplayPdfPages />} />
+
+
+
       {/* <Route path='' element={<PrivateRoute />}>
-        
+         
       </Route> */}
     </Route>
   )

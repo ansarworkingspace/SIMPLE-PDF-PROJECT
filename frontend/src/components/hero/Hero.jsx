@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 const Hero = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
-
+  const navigate = useNavigate() 
 
 
   const handleFileUpload = async (event) => {
@@ -22,6 +22,7 @@ const Hero = () => {
       await axios.post('http://localhost:5000/api/users/uploadPdf', formData);
       // If the upload is successful, you can perform additional actions here
       toast.success("PDF UPLOAD DONE")
+      navigate('/displayPdf')
     } catch (error) {
       // Handle any errors that occur during the upload
       console.error('Error uploading file: ', error);
