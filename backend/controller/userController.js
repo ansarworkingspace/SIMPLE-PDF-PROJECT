@@ -141,10 +141,15 @@ const getPages = asyncHandler(async (req, res) => {
 });
 
 
+
+
+
+
 export {
   authUser,
   registerUser,
   logoutUser,
   uploadPdf,
-  getPages
+  getPages,
+
 };

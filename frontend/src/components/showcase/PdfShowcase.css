@@ -1,119 +1,53 @@
-
-
-
-   /* .pdf-showcase {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-  }
-  
-  .pdf-page-box {
-    position: relative;
-    width: 150px;
-    height: 200px;
-    margin: 10px;
-    border: 1px solid #ccc;
-   
-    box-shadow: 12px 8px 4px rgb(178 4 216 / 9%);
-  }
-  
-  .inner-box {
-    width: 95%;
-    height: 70%;
-    margin: 3.5px; 
-    border: 1px solid #ccc;
-  }
-  
-  .additional-div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .page-number {
-    position: absolute;
-    bottom: 4px;
-    left: 10px;
-    font-size: 13px;
-    color: #8b15a5;
-    font-family: "Poppins";
-  }
-  
-
-  input[type='radio'] {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 1px solid gray; 
-    outline: none;
-    transition: 0.3s all;
-    background-color: #fff; 
-  }
-  
-  input[type='radio']:checked {
-    background-color: #8b15a5;
-  }
-  
-  input[type='radio']:checked::after {
-    content: '\2713'; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff; 
-    font-size: 12px;
-  }
-  
-
-
-  @media (min-width: 768px) {
-    .pdf-page-box {
-      width: 350px;
-      height: 500px;
-    }
-  
-    .inner-box {
-      height: 79%;
-      margin: 10px; 
-    
-    }
-  
-    .additional-div {
-      font-size: 20px;
-    }
-  
-    .page-number {
-      font-size: 48px;
-      bottom: 4px;
-      left: 20px;
-    }
-  
-    input[type='radio'] {
-      transform: scale(2.5);
-      bottom: 20px;
-      right: 20px;
-    }
-
-
-  } */
-  
-
  
   .pdf-showcase {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
   }
   
+
+   .download-button {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #8b15a5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 768px) {
+    /* For desktop view */
+    .download-button {
+      top: 10px;
+      right: -77px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* For mobile view */
+    .download-button {
+      width: 100%;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  .download-button:hover {
+    background-color: #a328b7;
+  }
+
+
+
+  .download-button:hover {
+    background-color: #a328b7;
+  }
+
+
+
+
   .pdf-page-box {
     position: relative;
     width: 150px;
