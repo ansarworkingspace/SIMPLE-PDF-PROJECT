@@ -30,7 +30,7 @@ const Header = () => {
       <Navbar className="custom-navbar"  variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand  >SIMPLE PDF</Navbar.Brand>
+            <Navbar.Brand className="brand"  >SIMPLE PDF</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

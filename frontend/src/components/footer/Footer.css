@@ -1,0 +1,47 @@
+
+   @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Francois+One&family=Phudu:wght@500&display=swap');
+
+.Footer {
+  width: 100%;
+  background-color: #8b15a5;
+  height: 25vh;
+  margin-top: 30px;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.content {
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons i {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 24px; 
+}
+
+.content h2 {
+  font-family: 'Phudu', sans-serif; 
+  font-weight: 500;
+  animation: fadeIn 2s ease;
+}
+

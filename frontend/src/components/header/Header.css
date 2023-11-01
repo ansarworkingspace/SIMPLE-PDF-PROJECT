@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Francois+One&family=Phudu:wght@500&display=swap');
 .navbar{
 	height: 6rem;
 	
@@ -9,3 +9,8 @@
 	
   }
 
+  .brand {
+	font-family: 'Phudu', sans-serif; /* Change to the desired font family from the imported fonts */
+	font-weight: 700; /* Update the font weight to 700 for bold */
+	font-size: 24px; /* Adjust the font size as needed */
+  }

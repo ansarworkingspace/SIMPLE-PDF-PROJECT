@@ -5,6 +5,8 @@ import '../hero/Hero.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Footer from '../footer/Footer';
+
 
 const Hero = () => {
 
