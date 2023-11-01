@@ -30,24 +30,58 @@ const RegisterScreen = () => {
 
 
 //submit the user details
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  
+  //   if (password !== confirmPassword) {
+  //     toast.error('Passwords do not match');
+  //   } else {
+       
+  //     try {
+  //       const res = await register({ name, email, password }).unwrap();
+        
+  //       dispatch(setCredentials({ ...res }));
+  //       navigate('/');
+  //     } catch (err) {
+  //       console.log(err?.data?.message || err.error);
+  //     }
+  //   }
+  // };
+
   const submitHandler = async (e) => {
     e.preventDefault();
   
+    // Password validation
+    if (password.length < 5) {
+      toast.error('Password must be at least 5 characters long');
+      return;
+    }
+  
+    // Email validation
+    if (!email.includes('@gmail.com')) {
+      toast.error('Please use a Gmail address');
+      return;
+    }
+  
+    // Confirm password validation
     if (password !== confirmPassword) {
       toast.error('Passwords do not match');
-    } else {
-       
-      try {
-        const res = await register({ name, email, password }).unwrap();
-        
-        dispatch(setCredentials({ ...res }));
-        navigate('/');
-      } catch (err) {
+      return;
+    }
+  
+    try {
+      const res = await register({ name, email, password }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate('/');
+    } catch (err) {
+      if (err?.data?.message) {
+        toast.error(err?.data?.message); // Display the error message from the server
+      } else {
         console.log(err?.data?.message || err.error);
       }
     }
   };
-
+  
 
 
   return (
