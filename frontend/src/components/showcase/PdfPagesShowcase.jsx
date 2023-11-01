@@ -1,12 +1,13 @@
 
-
+import {useNavigate} from 'react-router-dom';
 import React,{useState,useEffect} from 'react';
 import './PdfShowcase.css';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 import { PDFDocument } from 'pdf-lib';
-
+import { useLogoutMutation } from '../../slices/UserApiSlice'
+import { logout } from '../../slices/AuthSlice';
 
 
 const PdfShowcase = ({ pdfId }) => {
@@ -14,6 +15,11 @@ const PdfShowcase = ({ pdfId }) => {
     const [checkedBoxes, setCheckedBoxes] = useState([]);
     const [pageIds, setPageIds] = useState([]);
     const { userInfo } = useSelector((state) => state.auth);
+    const [logoutApiCall] = useLogoutMutation();
+    const navigate =useNavigate()
+    const dispatch = useDispatch();
+
+
 
     useEffect(() => {
         const fetchPages = async () => {
@@ -30,9 +36,37 @@ const PdfShowcase = ({ pdfId }) => {
     }, [pdfId, userInfo.email]);
 
 
+    const checkJWT = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/users/checkAuth', {
+          credentials: 'include' // Include cookies in the request
+        });
+    
+        if (!response.ok) {
+          await logoutApiCall().unwrap();
+          dispatch(logout());
+          navigate('/login');
+          return false;
+        }
+        return true;
+      } catch (error) {
+        toast.error('Check auth error');
+        return false;
+      }
+    };
 
 
+
+    
     const handleDownload = async () => {
+
+
+      const isAuthenticated = await checkJWT();
+      if (!isAuthenticated) {
+        return;
+      }
+    
+
         const mergedPdf = await PDFDocument.create();
         const loadedPdfPages = [];
     
@@ -64,6 +98,8 @@ const PdfShowcase = ({ pdfId }) => {
           setCheckedBoxes([...checkedBoxes, index]);
         }
       };
+
+
 return (
     <div className="pdf-showcase">
       {checkedBoxes.length > 0 && (

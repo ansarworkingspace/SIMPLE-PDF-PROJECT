@@ -4,7 +4,7 @@ import generateToken from '../utils/generateToken.js';
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
 import { PDFDocument } from 'pdf-lib';
-
+import jwt from 'jsonwebtoken';
 
 //login user
 const authUser = asyncHandler(async (req, res) => {
@@ -142,6 +142,23 @@ const getPages = asyncHandler(async (req, res) => {
 
 
 
+const checkAuth = asyncHandler(async(req,res)=>{
+  const token = req.cookies.jwt;
+
+  if (!token) {
+      return res.status(401).json({ message: 'Unauthorized' });
+  }
+
+  try {
+      const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+      // Perform any necessary checks or queries using decodedToken.userId
+      // ...
+
+      res.status(200).json({ message: 'Authorized' });
+  } catch (error) {
+      return res.status(401).json({ message: 'Unauthorized' });
+  }
+});
 
 
 
@@ -151,5 +168,5 @@ export {
   logoutUser,
   uploadPdf,
   getPages,
-
+  checkAuth,
 };
