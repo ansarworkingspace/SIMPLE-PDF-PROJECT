@@ -1,3 +1,5 @@
+
+//LOGIN SCREEN
 import { useState , useEffect} from 'react';
 import { Link ,useNavigate} from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
@@ -8,23 +10,27 @@ import { setCredentials } from '../../slices/AuthSlice';
 import { toast } from 'react-toastify';
 import Loader from '../../components/loader/Loader';
 
+
 const LoginScreen = () => {
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-  
     const dispatch = useDispatch();
     const navigate = useNavigate();
-  
     const [login, { isLoading }] = useLoginMutation();
-  
     const { userInfo } = useSelector((state) => state.auth);
   
+
+
+    //NAVIGATING TO HOME 
     useEffect(() => {
       if (userInfo) {
         navigate('/');
       }
-    }, [navigate, userInfo]);
-  
+     }, [navigate, userInfo]);
+
+
+    //LOGIN FORM SUBMITION
     const submitHandler = async (e) => {
       e.preventDefault();
       try {
@@ -36,6 +42,7 @@ const LoginScreen = () => {
       }
     };
   
+
     return (
       <FormContainer>
         <h2>Sign In</h2>

@@ -20,16 +20,18 @@ import DisplayPdfPages from './screen/display/DisplayPdfPages.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+    
     <Route path='/' element={<App />}>
       <Route index={true} path='/' element={<HomeScreen />} />
       <Route path='/login' element={<LoginScreen />} /> 
       <Route path='/register' element={<RegisterScreen />} />
      
 
-
+       {/* PRIVET ROUTER */}
       <Route path='' element={<PrivateRoute />}>
       <Route path='/displayPdf/:pdfId' element={<DisplayPdfPages />} />
       </Route>
+
     </Route>
   )
 );

@@ -20,6 +20,7 @@ const pdfSchema = mongoose.Schema({
   // Add more fields for the PDF as needed
 });
 
+//USER SCHEMA
 const userSchema = mongoose.Schema(
   {
     name: {

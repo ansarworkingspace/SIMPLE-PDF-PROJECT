@@ -1,3 +1,5 @@
+
+//CONTROLLER
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModels.js';
 import generateToken from '../utils/generateToken.js';
@@ -69,6 +71,7 @@ const logoutUser = (req, res) => {
 };
 
 
+//HANDLE UPLOAD PDF FILES
 const uploadPdf = asyncHandler(async (req, res) => {
   try {
     const { email } = req.body; // Retrieve user details
@@ -109,7 +112,7 @@ const uploadPdf = asyncHandler(async (req, res) => {
       await user.save();
 
       res.status(200).json({ message: 'PDF uploaded successfully', pdfId: pdfData.id });
-      // res.status(200).json({ message: 'PDF uploaded successfully' });
+      
     } else {
       res.status(404);
       throw new Error('User not found');
@@ -119,7 +122,7 @@ const uploadPdf = asyncHandler(async (req, res) => {
   }
 });
 
-
+//ACSESS THE PDF PAGES
 const getPages = asyncHandler(async (req, res) => {
   try {
     const { pdfId } = req.params;
@@ -141,7 +144,7 @@ const getPages = asyncHandler(async (req, res) => {
 });
 
 
-
+//CHECKING USER AUTH 
 const checkAuth = asyncHandler(async(req,res)=>{
   const token = req.cookies.jwt;
 

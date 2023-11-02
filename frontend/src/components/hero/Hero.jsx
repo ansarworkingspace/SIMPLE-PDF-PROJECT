@@ -1,3 +1,5 @@
+
+//MAIN PART OF THE HOME PAGE
 import { Container, Card, Button } from 'react-bootstrap';
 import { FaUpload } from 'react-icons/fa';
 import { useSelector,useDispatch } from 'react-redux';
@@ -21,7 +23,7 @@ const Hero = () => {
 
 
 
-  //check jwt
+  //CHECK USER AUTH
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -33,41 +35,24 @@ const Hero = () => {
               dispatch(logout());
               navigate('/login');
           }
-      } catch (error) {
-        toast.error('Check auth error');
-      }
-  };
+         } catch (error) {
+           toast.error('Check auth error');
+         }
+      };
+ 
+        if (userInfo) {
+         checkAuth();
+         }
 
-  if (userInfo) {
-      checkAuth();
-  }
-}, [userInfo, dispatch, logoutApiCall, navigate]); 
-
-
-
+   }, [userInfo, dispatch, logoutApiCall, navigate]); 
 
 
-  // const handleFileUpload = async (event) => {
 
 
-  //   const file = event.target.files[0];
-  //   const formData = new FormData();
-  //   formData.append('pdf', file);
-  //   formData.append('email', userInfo.email); // Append email to the formData
-    
-  //   try {
-  //     const response = await axios.post('http://localhost:5000/api/users/uploadPdf',formData)
-  //     // If the upload is successful, you can perform additional actions here
-  //     toast.success("PDF UPLOAD DONE")
-  //     const pdfId = response.data.pdfId; // Extract the PDF ID from the response
-  //     navigate(`/displayPdf/${pdfId}`); // Pass the PDF ID as a parameter
-  //   } catch (error) {
-  //     // Handle any errors that occur during the upload
-  //     console.error('Error uploading file: ', error);
-  //   }
-  // };
 
 
+
+  //CHECK AUTH OF USER WHILE UPLOADING PDF FILE
   const checkJWT = async () => {
     try {
       const response = await fetch('http://localhost:5000/api/users/checkAuth', {
@@ -89,33 +74,18 @@ const Hero = () => {
 
 
   const handleFileUpload = async (event) => {
-  // // Check if the user is authenticated before allowing the file upload
-  // try {
-  //   const response = await fetch('http://localhost:5000/api/users/checkAuth', {
-  //     credentials: 'include' // Include cookies in the request
-  //   });
-
-  //   if (!response.ok) {
-  //     await logoutApiCall().unwrap();
-  //     dispatch(logout());
-  //     navigate('/login');
-  //     return;
-  //   }
-  // } catch (error) {
-  //   toast.error('Check auth error');
-  //   return;
-  // }
-
-  const isAuthenticated = await checkJWT();
-  if (!isAuthenticated) {
+ 
+   const isAuthenticated = await checkJWT();
+   if (!isAuthenticated) {
     return;
-  }
+   }
 
 
     const file = event.target.files[0];
     const formData = new FormData();
     formData.append('pdf', file);
     formData.append('email', userInfo.email); // Append email to the formData
+    
     
     try {
       const response = await axios.post('http://localhost:5000/api/users/uploadPdf',formData)

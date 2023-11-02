@@ -1,4 +1,6 @@
 
+
+//PDF PAGES SHOWCASE
 import {useNavigate} from 'react-router-dom';
 import React,{useState,useEffect} from 'react';
 import './PdfShowcase.css';
@@ -20,7 +22,7 @@ const PdfShowcase = ({ pdfId }) => {
     const dispatch = useDispatch();
 
 
-
+    //FOR FETCHING ALL PDF PAGES 
     useEffect(() => {
         const fetchPages = async () => {
             try {
@@ -36,6 +38,7 @@ const PdfShowcase = ({ pdfId }) => {
     }, [pdfId, userInfo.email]);
 
 
+    //CHECK USER AUTH STATUS
     const checkJWT = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/users/checkAuth', {
@@ -57,7 +60,7 @@ const PdfShowcase = ({ pdfId }) => {
 
 
 
-    
+    //THIS METHOD USED FOR DOWNLOADING PDF FILE 
     const handleDownload = async () => {
 
 
@@ -112,11 +115,11 @@ return (
                 <div className="inner-box">
                
                 <iframe
-    src={`http://localhost:5000/api/users/uploads/${pageId}`}
-    width="100%"
-    height="100%"
-    title={`PDF-${index}`}
-></iframe>
+                src={`http://localhost:5000/api/users/uploads/${pageId}`}
+                width="100%"
+                height="100%"
+                title={`PDF-${index}`}
+                ></iframe>
 
 
 
@@ -136,13 +139,6 @@ export default PdfShowcase;
 
 
 
-
-// // <embed
-// // src={`http://localhost:5000/api/users/uploads/${pageId}`}
-// // type="application/pdf"
-// // width="100%"
-// // height="100%"
-// // />
 
 
 

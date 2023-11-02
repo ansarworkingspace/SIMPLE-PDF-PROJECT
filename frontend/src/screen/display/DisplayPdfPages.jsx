@@ -1,3 +1,5 @@
+
+//DISPLAY PDF PAGES 
 import React,{useEffect,useState} from 'react'
 import PdfShowcase from '../../components/showcase/PdfPagesShowcase'
 import { useParams } from 'react-router-dom';
@@ -16,7 +18,7 @@ function DisplayPdfPages() {
     const [logoutApiCall] = useLogoutMutation();
     const navigate =useNavigate()
 
-    //check jwt
+    //CHECK USER AUTH STATUS
     useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -41,7 +43,7 @@ function DisplayPdfPages() {
 
 
 
-
+ //PDF IS PASSED TO PDF SHOWCASE COMPONENT
   return (
     <div>
     <PdfShowcase pdfId={pdfId} />

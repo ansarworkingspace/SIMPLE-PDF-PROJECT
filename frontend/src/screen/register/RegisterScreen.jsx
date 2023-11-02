@@ -1,3 +1,5 @@
+
+//REGISTER SCREEN
 import { useState, useEffect } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import FormContainer from '../../components/form/FormContainer';
@@ -16,12 +18,13 @@ const RegisterScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userInfo } = useSelector((state) => state.auth);
   const [register, { isLoading }] = useRegisterMutation();
 
+  
+  //NAVIGATE TO HOME
   useEffect(() => {
     if (userInfo) {
       navigate('/');
@@ -29,25 +32,7 @@ const RegisterScreen = () => {
   }, [navigate, userInfo]);
 
 
-//submit the user details
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-  
-  //   if (password !== confirmPassword) {
-  //     toast.error('Passwords do not match');
-  //   } else {
-       
-  //     try {
-  //       const res = await register({ name, email, password }).unwrap();
-        
-  //       dispatch(setCredentials({ ...res }));
-  //       navigate('/');
-  //     } catch (err) {
-  //       console.log(err?.data?.message || err.error);
-  //     }
-  //   }
-  // };
-
+  //REGISTER FORM SUBMITION 
   const submitHandler = async (e) => {
     e.preventDefault();
   

@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/header/Header';
 import './App.css'
 
-
+//APP MAIN PAGES 
 const App = () => {
   return (
     <>

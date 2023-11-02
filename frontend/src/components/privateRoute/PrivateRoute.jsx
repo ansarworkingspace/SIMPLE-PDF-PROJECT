@@ -1,3 +1,5 @@
+
+//PRIVET ROUTER
 import { Navigate, Outlet ,useNavigate} from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import { useLogoutMutation } from '../../slices/UserApiSlice'
@@ -6,9 +8,6 @@ import { useState,useEffect } from 'react';
 
 const PrivateRoute = () => {
 
-
-
-
   const { userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [logoutApiCall] = useLogoutMutation();
@@ -16,7 +15,7 @@ const PrivateRoute = () => {
 
 
 
-  //check jwt
+  //CHECK USER AUTH STATUS
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -43,7 +42,7 @@ const PrivateRoute = () => {
 
 
 
-  // const { userInfo } = useSelector((state) => state.auth);
+  //CHECKING USERINFO TRUE OR NOT
   return userInfo ? <Outlet /> : <Navigate to='/login' replace />;
 };
 export default PrivateRoute;

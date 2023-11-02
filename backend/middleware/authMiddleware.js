@@ -1,3 +1,5 @@
+
+//AUTH MIDDLEWARE OF THE USER
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModels.js';
