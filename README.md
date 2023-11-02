@@ -21,14 +21,51 @@ Installation:
 8. Installation is complete.
 
 
+
 Usage:
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/5237943c-5d3a-4486-b165-98bd9b4838a0">
+</p>
+
 1. Users must register to extract PDFs.
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/58299d6f-bdbd-42bf-8d7d-6e181aa65912">
+</p>
+
 2. After registering, log in to the user account.
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/2e4d0ea0-6a4c-4d81-b858-7d5a0e66ea09">
+</p>
+
 3. Then, redirect to the homepage.
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/3098d1b0-9f20-453e-b972-e2d1e31af948">
+</p>
+
 4. Users can easily upload a PDF file by clicking the upload icon.
+
 5. The pages will be displayed.
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/901d697f-7727-4a03-a246-6093bf4de3b4">
+</p>
+
 6. Now, users can select any desired pages by clicking the checkboxes.
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/cf106749-42e9-4cce-a6d5-dccc4cace49d">
+</p>
+
 7. After selecting the checkboxes, the user can see the download button and easily download the selected PDF file as a single PDF file.
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/olx-clone/assets/136152544/328b754c-ddbe-4e62-9071-16fac6dfbeea">
+</p>
+
 
 
 Technologies Used:
