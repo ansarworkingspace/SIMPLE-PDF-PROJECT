@@ -23,27 +23,47 @@ Installation:
 
 Usage:
 
-![image1](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/ecfce976-2c50-4a07-aa94-547c7640add7)
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/ecfce976-2c50-4a07-aa94-547c7640add7">
+</p>
 
 1. Users must register to extract PDFs.
-![image2](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/a65978c8-82a8-4351-a34d-d73182a1ea72)
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/a65978c8-82a8-4351-a34d-d73182a1ea72">
+</p>
 
 2. After registering, log in to the user account.
-![image3](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/6daa1ae3-d7c6-41d2-b954-9253b1af1317)
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/6daa1ae3-d7c6-41d2-b954-9253b1af1317">
+</p>
 
 3. Then, redirect to the homepage.
-![image4](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/0bce3c1b-c198-43bc-bafc-bb67d3d8dc23)
 
 4. Users can easily upload a PDF file by clicking the upload icon.
 
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/0bce3c1b-c198-43bc-bafc-bb67d3d8dc23">
+</p>
+
 5. The pages will be displayed.
-![image5](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/c2984e91-f67a-407f-a669-db3af9eadcce)
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/c2984e91-f67a-407f-a669-db3af9eadcce">
+</p>
 
 6. Now, users can select any desired pages by clicking the checkboxes.
-![image6](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/b58c42e0-3ef4-4062-a2ae-816f61ddcc2c)
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/b58c42e0-3ef4-4062-a2ae-816f61ddcc2c">
+</p>
 
 7. After selecting the checkboxes, the user can see the download button and easily download the selected PDF file as a single PDF file.
-![image7](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/312228a5-6876-435b-931c-7ac9b5aa8273)
+
+<p align="center">
+  <img src="https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/312228a5-6876-435b-931c-7ac9b5aa8273">
+</p>
 
 
 
