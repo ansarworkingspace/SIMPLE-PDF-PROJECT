@@ -23,27 +23,28 @@ Installation:
 
 Usage:
 
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/ecfce976-2c50-4a07-aa94-547c7640add7)
+![image1](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/ecfce976-2c50-4a07-aa94-547c7640add7)
 
 1. Users must register to extract PDFs.
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/a65978c8-82a8-4351-a34d-d73182a1ea72)
+![image2](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/a65978c8-82a8-4351-a34d-d73182a1ea72)
 
 2. After registering, log in to the user account.
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/6daa1ae3-d7c6-41d2-b954-9253b1af1317)
+![image3](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/6daa1ae3-d7c6-41d2-b954-9253b1af1317)
 
 3. Then, redirect to the homepage.
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/0bce3c1b-c198-43bc-bafc-bb67d3d8dc23)
+![image4](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/0bce3c1b-c198-43bc-bafc-bb67d3d8dc23)
 
 4. Users can easily upload a PDF file by clicking the upload icon.
 
 5. The pages will be displayed.
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/c2984e91-f67a-407f-a669-db3af9eadcce)
+![image5](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/c2984e91-f67a-407f-a669-db3af9eadcce)
 
 6. Now, users can select any desired pages by clicking the checkboxes.
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/b58c42e0-3ef4-4062-a2ae-816f61ddcc2c)
+![image6](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/b58c42e0-3ef4-4062-a2ae-816f61ddcc2c)
 
 7. After selecting the checkboxes, the user can see the download button and easily download the selected PDF file as a single PDF file.
-![image](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/312228a5-6876-435b-931c-7ac9b5aa8273)
+![image7](https://github.com/ansarworkingspace/SIMPLE-PDF-PROJECT/assets/136152544/312228a5-6876-435b-931c-7ac9b5aa8273)
+
 
 
 Technologies Used:
