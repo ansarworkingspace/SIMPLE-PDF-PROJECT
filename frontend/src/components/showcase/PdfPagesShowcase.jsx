@@ -110,12 +110,16 @@ return (
         {pageIds.map((pageId, index) => (
             <div key={index} className="pdf-page-box">
                 <div className="inner-box">
-                <embed
-                        src={`http://localhost:5000/api/users/uploads/${pageId}`}
-                        type="application/pdf"
-                        width="100%"
-                        height="100%"
-                    />
+               
+                <iframe
+    src={`http://localhost:5000/api/users/uploads/${pageId}`}
+    width="100%"
+    height="100%"
+    title={`PDF-${index}`}
+></iframe>
+
+
+
                 </div>
                 <div className="page-number">{index + 1}</div>
                 <input type="checkbox" name="pdf-page" value={index + 1}  onChange={() => handleCheckboxChange(index)} />
@@ -129,3 +133,16 @@ return (
 };
 
 export default PdfShowcase;
+
+
+
+
+// // <embed
+// // src={`http://localhost:5000/api/users/uploads/${pageId}`}
+// // type="application/pdf"
+// // width="100%"
+// // height="100%"
+// // />
+
+
+
